@@ -1,0 +1,22 @@
+{
+  "name": "complex-app",
+  "version": "1.0.0",
+  "description": "A typical E2E application involving reactjs expressjs redis postgre worker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon"
+  },
+  "keywords": [
+    "react",
+    "express",
+    "redis"
+  ],
+  "author": "Rohith Surya Gonela",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.4",
+    "redis": "^3.0.2"
+  }
+}
