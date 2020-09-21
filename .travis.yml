@@ -7,3 +7,16 @@ before_install:
 
 script:
   - docker run -e CI=true rohith/test-MCA npm run test
+
+after_install:
+  - docker build -t rohith/mca-client ./client
+  - docker build -t rohith/mca-nginx ./nginx
+  - docker build -t rohith/mca-server ./server
+  - docker build -t rohith/mca-worker ./worker
+  #Login to docker CLI
+  - echo "$DOCKER_PSWD" | docker login -u "$DOCKER_ID" --password-stdin
+  #Publish those images intp docker HUB
+  - docker push rohith/mca-client
+  - docker push rohith/mca-nginx
+  - docker push rohith/mca-server
+  - docker push rohith/mca-worker
