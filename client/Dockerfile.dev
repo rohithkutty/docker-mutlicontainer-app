@@ -1,9 +1,7 @@
 FROM node:alpine
 WORKDIR '/app'
 EXPOSE 80
-RUN pwd
-RUN ls -al
-COPY . .
-RUN ls -al
+COPY ./client/package.json ./
 RUN npm install
+COPY . .
 CMD ["npm", "start"]
