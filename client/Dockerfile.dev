@@ -3,7 +3,6 @@ WORKDIR '/app'
 EXPOSE 80
 RUN pwd
 RUN ls -al
-COPY package.json ./
-RUN npm install
 COPY . .
+RUN npm install
 CMD ["npm", "start"]
